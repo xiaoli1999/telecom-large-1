@@ -22,7 +22,7 @@ export default {
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    //overflow: hidden;
     display: flex;
     justify-content: center;
 }

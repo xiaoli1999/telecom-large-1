@@ -1,5 +1,5 @@
 <template>
-    <div class="title">
+    <div :class="isBig ? 'title big' : 'title small'">
         <div>{{ title }}</div>
     </div>
 </template>
@@ -11,6 +11,10 @@ export default {
         title: {
             type: Object,
             require: true
+        },
+        isBig: {
+            type: Boolean,
+            default: false
         }
     }
 }
@@ -18,11 +22,20 @@ export default {
 
 <style lang="less" scoped>
 .title {
-    width: 440px;
-    height: 44px;
-    background: url("../assets/img/title.png") no-repeat;
-    background-size: 100%;
-    margin: 8px auto;
+    height: 41px;
+    margin: 0 auto 10px;
+
+    &.small {
+        width: 450px;
+        background: url("../assets/img/title.png") no-repeat;
+        background-size: 100%;
+    }
+
+    &.big {
+        width: 602px;
+        background: url("../assets/img/title.png") no-repeat;
+        background-size: 100%;
+    }
 
     > div {
         font-size: 18px;
