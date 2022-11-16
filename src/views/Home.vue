@@ -1,17 +1,17 @@
 <template>
     <div id="home" class="home">
-        <Header />
+<!--        <Header />-->
         <div class="main">
             <div class="main-top">
+                <Business />
+                <Census />
                 <Add />
-                <Add />
-                <Add />
-                <Add />
+                <Target />
             </div>
             <div class="main-bottom">
                 <Life />
-                <Life />
-                <Life />
+                <Product />
+                <Number />
             </div>
         </div>
     </div>
@@ -19,14 +19,22 @@
 
 <script>
 import Header from '../components/Header'
+
+import Business from "@/components/top/Business";
+import Census from "@/components/top/Census";
 import Add from "@/components/top/Add";
+import Target from "@/components/top/Target";
+
 import Life from "@/components/bottom/Life";
+import Product from "@/components/bottom/Product";
+import Number from "@/components/bottom/Number";
+
 import { screenAuto } from '@/libs/screen.tools'
 import { throttle } from '@/libs/common'
 
 export default {
     name: 'Home',
-    components: { Header, Add, Life },
+    components: { Header, Business, Census, Add, Target, Life, Product, Number },
     data () {
         return {
 
@@ -54,11 +62,12 @@ export default {
     //box-sizing: border-box;
     width: 1920px;
     height: 1080px;
-    background: url("../assets/img/bg.png") center no-repeat;
+    //background: url("../assets/img/bg.png") center no-repeat;
     background-size: 100%;
     transform-origin: 50% 0;
     transition: all .28s;
     //border: 1px dashed #fff;
+    color: #fff;
 
     .main {
         width: 100%;

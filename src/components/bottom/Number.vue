@@ -1,8 +1,8 @@
 <template>
-    <div class="life">
-        <Title :title="'创新生活-月新增'" :is-big="true" />
+    <div class="number">
+        <Title :title="'数字生活-月新增'" :is-big="true" />
         <div class="item-box-big">
-            创新生活-月新增区域
+            数字生活-月新增区域
         </div>
     </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import Title from '../Title'
 export default {
-    name: 'Life',
+    name: 'Number',
     components: { Title },
     data () {
         return {
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.life {
+.number {
 
 }
 </style>
