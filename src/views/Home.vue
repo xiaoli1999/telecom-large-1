@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div id="home" class="home">
         <Header />
         <div class="main"></div>
     </div>
@@ -8,6 +8,8 @@
 <script>
 import Header from '../components/Header'
 import Title from '../components/Title'
+import { screenAuto } from '@/libs/screen.tools'
+import { throttle } from '@/libs/common'
 
 export default {
     name: 'Home',
@@ -21,7 +23,11 @@ export default {
 
     },
     async mounted () {
-
+        screenAuto()
+        window.onresize = () => (throttle(screenAuto(), 360))
+    },
+    destroyed() {
+        window.onresize = null
     },
     methods: {
 
@@ -32,12 +38,14 @@ export default {
 <style lang="less" scoped>
 .home {
     position: relative;
-    min-width: 1920px;
-    min-height: 1080px;
-    overflow: hidden;
+    box-sizing: border-box;
+    width: 1920px;
+    height: 1080px;
     background: url("../assets/img/bg.png") center no-repeat;
     background-size: 100%;
-    transform-origin: center;
+    transform-origin: 50% 0;
+    transition: all .28s;
+    border: 1px dashed #fff;
 
     .main {
         width: 100%;

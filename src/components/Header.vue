@@ -13,7 +13,7 @@ export default {
 
 <style lang="less" scoped>
 .header {
-    min-width: 1920px;
+    width: 1920px;
     height: 140px;
     display: flex;
     justify-content: center;
@@ -23,7 +23,6 @@ export default {
     color: #FFFFFF;
     line-height: 50px;
     text-shadow: 0 0 10px #105ED9;
-    overflow: hidden;
 
     > img {
         width: 124px;
