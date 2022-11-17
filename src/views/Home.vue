@@ -1,6 +1,6 @@
 <template>
     <div id="home" class="home">
-<!--        <Header />-->
+        <Header />
         <div class="main">
             <div class="main-top">
                 <Business />

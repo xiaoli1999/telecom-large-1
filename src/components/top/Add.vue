@@ -63,6 +63,7 @@ export default {
         initChart() {
             const chartDom = document.getElementById('chart-3')
             const myChart = echarts.init(chartDom)
+            myChart.clear()
 
             let option = {
                 tooltip: {

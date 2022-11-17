@@ -11,6 +11,7 @@
 <script>
 import Title from '../Title'
 import * as echarts from "echarts";
+
 export default {
     name: 'Life',
     components: { Title },
@@ -24,8 +25,9 @@ export default {
     },
     methods: {
         initChart() {
-        const chartDom = document.getElementById('chart-4')
-        const myChart = echarts.init(chartDom)
+            const chartDom = document.getElementById('chart-4')
+            const myChart = echarts.init(chartDom)
+            myChart.clear()
 
             const option = {
                 // backgroundColor: 'rbg(40,46,72,0)',
