@@ -7,13 +7,43 @@
                 <img class="chart-wrap" src="../../assets/img/circle-wrap.png" alt="">
                 <img class="chart-inline" src="../../assets/img/circle-2.png" alt="">
             </div>
-            <div class="desc">
-                <div v-for="(item, index) in list" :key="index" class="desc-item">
-                    <div class="desc-item-l" :style="`background: ${ item.color }`"></div>
-                    <div class="desc-item-r">
-                        <div>{{ item.name }}</div>
+            <div class="list">
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[0].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[0].name }}</div>
                         <div>
-                            <animate-number from="0" :to="item.value" duration="1200" />%
+                            <animate-number from="0" :to="list[0].value" duration="1200" />%
+                        </div>
+                    </div>
+                </div>
+                <div class="list-line"></div>
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[1].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[1].name }}</div>
+                        <div>
+                            <animate-number from="0" :to="list[1].value" duration="1200" />%
+                        </div>
+                    </div>
+                </div>
+                <div class="list-line"></div>
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[2].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[2].name }}</div>
+                        <div>
+                            <animate-number from="0" :to="list[2].value" duration="1200" />%
+                        </div>
+                    </div>
+                </div>
+                <div class="list-line"></div>
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[3].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[3].name }}</div>
+                        <div>
+                            <animate-number from="0" :to="list[1].value" duration="1200" />%
                         </div>
                     </div>
                 </div>
@@ -193,58 +223,43 @@ export default {
         }
     }
 
-    .desc {
+    .list {
+        width: 426px;
         height: 52px;
-        margin: 12px;
+        margin: 12px auto;
         box-sizing: border-box;
+        padding: 0 8px;
         display: flex;
+        justify-content: space-around;
         align-items: center;
         background: linear-gradient(180deg, rgba(5, 55, 122, .5) 0%, rgba(9, 26, 61, .5) 100%);
         border: 1px solid;
         border-image: linear-gradient(180deg, rgba(54, 120, 194, .5), rgba(43, 90, 162, 0)) 1 1;
 
-        .desc-item {
+        .list-item {
             position: relative;
-            flex: 1;
-            height: 52px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 6px 8px;
 
-            &::after {
-                position: absolute;
-                display: block;
-                content: '';
-                width: 1px;
-                height: 23px;
-                top: 15px;
-                right: -2px;
-                background: linear-gradient(180deg, rgba(50,104,166,0) 0%, #2D6CB0 50%, rgba(43,112,166,0) 98%);
-                z-index: 1;
-            }
-
-            .desc-item-l {
+            .list-item-bg {
                 width: 12px;
                 height: 12px;
-                margin-bottom: 12px;
+                margin: 4px 8px 0 0;
             }
 
-            .desc-item-r {
-                font-size: 13px;
+            .list-item-content {
+                font-size: 14px;
                 font-weight: 400;
                 color: #FFFFFF;
-                margin-left: 4px;
-
-                > div {
-                    height: 20px;
-                    line-height: 20px;
-                }
+                line-height: 20px;
             }
         }
 
-        .desc-item:last-child::after {
-            display: none;
+        .list-line {
+            width: 1px;
+            height: 23px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, rgba(50,104,166,0) 0%, #2D6CB0 50%, rgba(43,112,166,0) 98%);
         }
     }
 

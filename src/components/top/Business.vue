@@ -6,6 +6,37 @@
                 <div id="chart-1" class="chart-content"></div>
                 <img class="chart-inline" src="../../assets/img/circle-1.png" alt="">
             </div>
+            <div class="list">
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[0].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[0].name }}</div>
+                        <div>
+                            <animate-number from="0" :to="list[0].value" duration="1200" />%
+                        </div>
+                    </div>
+                </div>
+                <div class="list-line"></div>
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[1].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[1].name }}</div>
+                        <div>
+                            <animate-number from="0" :to="list[1].value" duration="1200" />%
+                        </div>
+                    </div>
+                </div>
+                <div class="list-line"></div>
+                <div class="list-item">
+                    <div class="list-item-bg" :style="`background:  ${list[2].color}`"></div>
+                    <div class="list-item-content">
+                        <div>{{ list[2].name }}</div>
+                        <div>
+                            <animate-number from="0" :to="list[2].value" duration="1200" />%
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -160,6 +191,48 @@ export default {
                 border-radius: 50%;
                 overflow: hidden;
                 z-index: 5;
+            }
+        }
+
+        .list {
+            width: 412px;
+            height: 52px;
+            margin: 12px auto;
+            box-sizing: border-box;
+            padding: 0 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(5, 55, 122, .5) 0%, rgba(9, 26, 61, .5) 100%);
+            border: 1px solid;
+            border-image: linear-gradient(180deg, rgba(54, 120, 194, .5), rgba(43, 90, 162, 0)) 1 1;
+
+            .list-item {
+                position: relative;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+
+                .list-item-bg {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    margin: 2px 12px 0 0;
+                }
+
+                .list-item-content {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 20px;
+                }
+            }
+
+            .list-line {
+                width: 1px;
+                height: 23px;
+                margin: 0 8px;
+                background: linear-gradient(180deg, rgba(50,104,166,0) 0%, #2D6CB0 50%, rgba(43,112,166,0) 98%);
             }
         }
     }

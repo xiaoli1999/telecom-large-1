@@ -44,8 +44,8 @@ export default {
 
     },
     async mounted () {
-        // screenAuto()
-        // window.onresize = () => (throttle(screenAuto(), 360))
+        screenAuto()
+        window.onresize = () => (throttle(screenAuto(), 360))
     },
     destroyed() {
         window.onresize = null
@@ -59,14 +59,12 @@ export default {
 <style lang="less" scoped>
 .home {
     position: relative;
-    //box-sizing: border-box;
     width: 1920px;
     height: 1080px;
-    //background: url("../assets/img/bg.png") center no-repeat;
+    background: url("../assets/img/bg.png") center no-repeat;
     background-size: 100%;
     transform-origin: 50% 0;
     transition: all .28s;
-    //border: 1px dashed #fff;
     color: #fff;
 
     .main {

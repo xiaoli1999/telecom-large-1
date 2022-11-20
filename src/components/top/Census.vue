@@ -2,6 +2,17 @@
     <div class="census">
         <Title :title="'业务统计'" />
         <div class="item-box-small">
+            <div class="list">
+                <div v-for="(name, index) in cateArr" :key="index" class="list-item" @click="changeChart(index)">
+                    <img v-if="index === cateIndex" src="../../assets/img/grid.png" alt="">
+                    <img v-else src="../../assets/img/grid-active.png" alt="">
+                    <div :class="index === cateIndex ? 'active' : ''">
+                        <img v-if="index === cateIndex" src="../../assets/img/dot-active.png" alt="">
+                        <img v-else src="../../assets/img/dot.png" alt="">
+                        <span>{{ name }}</span>
+                    </div>
+                </div>
+            </div>
             <div id="chart-2" class="chart"></div>
         </div>
     </div>
@@ -17,7 +28,7 @@ export default {
     data () {
         return {
             color: ['#EBC53F', '#3D97EE', '#94AEDB'],
-            index: 1,
+            cateIndex: 0,
             cateArr: ['移动', '宽度', '高清'],
             list: [
                 [
@@ -130,6 +141,9 @@ export default {
                                 type: 'dashed'
                             }
                         },
+
+
+
                     },
                     {
                         type: 'value',
@@ -147,10 +161,15 @@ export default {
                         },
                     }
                 ],
-                series: this.list[this.index]
+                series: this.list[this.cateIndex]
             }
 
             myChart.setOption(option)
+        },
+
+        changeChart (i) {
+            this.cateIndex = i
+            this.initChart()
         }
 
     }
@@ -160,6 +179,47 @@ export default {
 <style lang="less" scoped>
 .census {
     .item-box-small {
+        .list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px auto;
+
+            .list-item {
+                position: relative;
+                cursor: pointer;
+
+                > img {
+                    width: 136px;
+                    height: 42px;
+                }
+
+                > div {
+                    position: absolute;
+                    width: fit-content;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #AFC7FD;
+                    line-height: 22px;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    z-index: 5;
+                    display: flex;
+                    align-items: center;
+
+                    &.active {
+                        color: #fff;
+                    }
+
+                    > img {
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
 
         .chart {
             width: 420px;

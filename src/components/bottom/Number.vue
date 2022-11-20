@@ -2,6 +2,17 @@
     <div class="number">
         <Title :title="'数字生活-月新增'" :is-big="true" />
         <div class="item-box-big">
+            <div class="list">
+                <div v-for="(name, index) in cateArr" :key="index" class="list-item" @click="changeChart(index)">
+                    <img v-if="index === cateIndex" src="../../assets/img/grid2.png" alt="">
+                    <img v-else src="../../assets/img/grid2-active.png" alt="">
+                    <div :class="index === cateIndex ? 'active' : ''">
+                        <img v-if="index === cateIndex" src="../../assets/img/dot-active.png" alt="">
+                        <img v-else src="../../assets/img/dot.png" alt="">
+                        <span>{{ name }}</span>
+                    </div>
+                </div>
+            </div>
             <div id="chart-6" class="chart"></div>
         </div>
     </div>
@@ -17,7 +28,7 @@ export default {
     data () {
         return {
             color: ['#EBC53F', '#3D97EE', '#94AEDB'],
-            index: 0,
+            cateIndex: 0,
             cateArr: ['智能组网', '天翼看家'],
             list: [
                 [
@@ -130,10 +141,15 @@ export default {
                         },
                     }
                 ],
-                series: this.list[this.index]
+                series: this.list[this.cateIndex]
             }
 
             myChart.setOption(option)
+        },
+
+        changeChart (i) {
+            this.cateIndex = i
+            this.initChart()
         }
     }
 }
@@ -142,6 +158,49 @@ export default {
 <style lang="less" scoped>
 .number {
     .item-box-big {
+
+        .list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 16px 24px 8px;
+
+
+            .list-item {
+                position: relative;
+                cursor: pointer;
+
+                > img {
+                    width: 268px;
+                    height: 42px;
+                }
+
+                > div {
+                    position: absolute;
+                    width: fit-content;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #AFC7FD;
+                    line-height: 22px;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    z-index: 5;
+                    display: flex;
+                    align-items: center;
+
+                    &.active {
+                        color: #fff;
+                    }
+
+                    > img {
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
 
         .chart {
             position: relative;
