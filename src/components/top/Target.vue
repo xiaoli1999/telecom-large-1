@@ -93,11 +93,11 @@ export default {
                 { name: 'xxx' },
                 { name: 'xxx' },
                 { name: 'xxx' },
-                { name: 'xxx' },
+                { name: 'xxx' }
             ]
         }
     },
-    mounted() {
+    mounted () {
 
     },
     methods: {

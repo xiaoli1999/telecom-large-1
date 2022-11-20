@@ -20,7 +20,7 @@
 
 <script>
 import Title from '../Title'
-import * as echarts from "echarts";
+import * as echarts from 'echarts'
 
 export default {
     name: 'Life',
@@ -31,28 +31,28 @@ export default {
             cateArr: ['视频彩铃', '通信助理', '挂机名片', '挂机名片'],
             list: [
                 {
-                    name: "视频彩铃",
+                    name: '视频彩铃',
                     data: [
                         [16, 30, 34, 18, 42, 14],
                         [12, 64, 84, 8, 20, 6]
                     ]
                 },
                 {
-                    name: "通信助理",
+                    name: '通信助理',
                     data: [
                         [8, 12, 44, 20, 68, 44],
                         [42, 20, 88, 12, 46, 36]
                     ]
                 },
                 {
-                    name: "挂机名片",
+                    name: '挂机名片',
                     data: [
                         [24, 66, 48, 24, 12, 46],
                         [24, 48, 64, 84, 36, 34]
                     ]
                 },
                 {
-                    name: "挂机名片",
+                    name: '挂机名片',
                     data: [
                         [64, 84, 42, 68, 12, 28],
                         [44, 68, 88, 28, 44, 36]
@@ -61,11 +61,11 @@ export default {
             ]
         }
     },
-    mounted() {
+    mounted () {
         this.initChart()
     },
     methods: {
-        initChart() {
+        initChart () {
             const chartDom = document.getElementById('chart-4')
             const myChart = echarts.init(chartDom)
             myChart.clear()
@@ -91,7 +91,7 @@ export default {
                         type: 'line',
                         lineStyle: {
                             color: 'rgba(50, 216, 205, 1)'
-                        },
+                        }
                     }
                 },
                 xAxis: [{
@@ -137,7 +137,7 @@ export default {
                     axisTick: {
                         show: false
                     }
-                },
+                }
 
                 ],
                 series: [
@@ -149,9 +149,9 @@ export default {
                             normal: {
                                 color: '#EACC36',
                                 lineStyle: {
-                                    color: "#EACC36",
+                                    color: '#EACC36',
                                     width: 2
-                                },
+                                }
                             }
                         },
                         areaStyle: {
@@ -164,7 +164,7 @@ export default {
                                         offset: 1,
                                         color: '#EACC3660'
                                     }
-                                ], false),
+                                ], false)
                             }
                         },
                         data: this.list[this.cateIndex].data[0]
@@ -177,9 +177,9 @@ export default {
                             normal: {
                                 color: '#4398FA',
                                 lineStyle: {
-                                    color: "#4398FA",
+                                    color: '#4398FA',
                                     width: 2
-                                },
+                                }
                             }
                         },
                         areaStyle: {
@@ -192,13 +192,13 @@ export default {
                                         offset: 1,
                                         color: '#4398FA60'
                                     }
-                                ], false),
+                                ], false)
                             }
                         },
                         data: this.list[this.cateIndex].data[1]
-                    },
-                ],
-            };
+                    }
+                ]
+            }
 
         myChart.setOption(option)
       },

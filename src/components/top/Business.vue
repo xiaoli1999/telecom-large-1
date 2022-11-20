@@ -69,17 +69,16 @@ export default {
             ]
         }
     },
-    mounted() {
+    mounted () {
         this.initChart()
-
     },
     methods: {
-        initChart() {
+        initChart () {
             const chartDom = document.getElementById('chart-1')
             const myChart = echarts.init(chartDom)
             myChart.clear()
 
-            let option = {
+            const option = {
                 tooltip: {},
                 // backgroundColor: '#2c343c',
                 grid: {
@@ -132,14 +131,14 @@ export default {
                             maxSurfaceAngle: 80
                         },
                         labelLayout: function (params) {
-                            const isLeft = params.labelRect.x < myChart.getWidth() / 2;
-                            const points = params.labelLinePoints;
+                            const isLeft = params.labelRect.x < myChart.getWidth() / 2
+                            const points = params.labelLinePoints
                             points[2][0] = isLeft
                                     ? params.labelRect.x
-                                    : params.labelRect.x + params.labelRect.width;
+                                    : params.labelRect.x + params.labelRect.width
                             return {
                                 labelLinePoints: points
-                            };
+                            }
                         },
                         data: this.list.map(i => ({
                             ...i,

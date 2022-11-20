@@ -20,14 +20,14 @@
 <script>
 import Header from '../components/Header'
 
-import Business from "@/components/top/Business";
-import Census from "@/components/top/Census";
-import Add from "@/components/top/Add";
-import Target from "@/components/top/Target";
+import Business from '@/components/top/Business'
+import Census from '@/components/top/Census'
+import Add from '@/components/top/Add'
+import Target from '@/components/top/Target'
 
-import Life from "@/components/bottom/Life";
-import Product from "@/components/bottom/Product";
-import Number from "@/components/bottom/Number";
+import Life from '@/components/bottom/Life'
+import Product from '@/components/bottom/Product'
+import Number from '@/components/bottom/Number'
 
 import { screenAuto } from '@/libs/screen.tools'
 import { throttle } from '@/libs/common'
@@ -47,7 +47,7 @@ export default {
         screenAuto()
         window.onresize = () => (throttle(screenAuto(), 360))
     },
-    destroyed() {
+    destroyed () {
         window.onresize = null
     },
     methods: {

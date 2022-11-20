@@ -33,56 +33,56 @@ export default {
             list: [
                 [
                     {
-                        name: "一次性礼包",
+                        name: '一次性礼包',
                         data: [16, 30, 34, 18, 42, 14],
                         type: 'bar',
                         stack: 'total',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "月租型礼包",
+                        name: '月租型礼包',
                         data: [12, 20, 10, 8, 20, 6],
                         type: 'bar',
                         stack: 'total',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "全量宽带渗透率",
+                        name: '全量宽带渗透率',
                         data: [62, 88, 58, 90, 66, 92],
                         type: 'line',
                         smooth: true
-                    },
+                    }
                 ],
                 [
                     {
-                        name: "一次性礼包",
+                        name: '一次性礼包',
                         data: [24, 16, 28, 38, 16, 40],
                         type: 'bar',
                         stack: 'total',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "月租型礼包",
+                        name: '月租型礼包',
                         data: [8, 6, 8, 18, 6, 12],
                         type: 'bar',
                         stack: 'total',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "全量宽带渗透率",
+                        name: '全量宽带渗透率',
                         data: [54, 66, 84, 52, 48, 88],
                         type: 'line',
                         smooth: true
-                    },
+                    }
                 ]
             ]
         }
     },
-    mounted() {
+    mounted () {
         this.initChart()
     },
     methods: {
-        initChart() {
+        initChart () {
             const chartDom = document.getElementById('chart-6')
             const myChart = echarts.init(chartDom)
             myChart.clear()
@@ -123,7 +123,7 @@ export default {
                                 color: 'rgba(255, 255, 255, 0.1)',
                                 type: 'dashed'
                             }
-                        },
+                        }
                     },
                     {
                         type: 'value',
@@ -138,7 +138,7 @@ export default {
                                 color: 'rgba(255, 255, 255, 0.1)',
                                 type: 'dashed'
                             }
-                        },
+                        }
                     }
                 ],
                 series: this.list[this.cateIndex]
@@ -164,7 +164,6 @@ export default {
             align-items: center;
             justify-content: space-between;
             margin: 16px 24px 8px;
-
 
             .list-item {
                 position: relative;

@@ -33,73 +33,72 @@ export default {
             list: [
                 [
                     {
-                        name: "月累计",
+                        name: '月累计',
                         data: [16, 30, 34, 18, 42, 14],
                         type: 'bar',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "出账用户数",
+                        name: '出账用户数',
                         data: [12, 20, 10, 8, 20, 6],
                         type: 'bar',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "出账用户数占比",
+                        name: '出账用户数占比',
                         data: [62, 88, 58, 90, 66, 92],
                         type: 'line',
-                        smooth: true,
-                    },
+                        smooth: true
+                    }
                 ],
                 [
                     {
-                        name: "月累计",
+                        name: '月累计',
                         data: [24, 16, 28, 38, 16, 40],
                         type: 'bar',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "出账用户数",
+                        name: '出账用户数',
                         data: [8, 6, 8, 18, 6, 12],
                         type: 'bar',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "出账用户数占比",
+                        name: '出账用户数占比',
                         data: [54, 66, 84, 52, 48, 88],
                         type: 'line',
-                        smooth: true,
-                    },
+                        smooth: true
+                    }
                 ],
                 [
                     {
-                        name: "月累计",
+                        name: '月累计',
                         data: [34, 26, 42, 16, 64, 88],
                         type: 'bar',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "出账用户数",
+                        name: '出账用户数',
                         data: [24, 18, 24, 12, 55, 42],
                         type: 'bar',
-                        barWidth: 12,
+                        barWidth: 12
                     },
                     {
-                        name: "出账用户数占比",
+                        name: '出账用户数占比',
                         data: [34, 96, 72, 24, 66, 36],
                         type: 'line',
-                        smooth: true,
-                    },
+                        smooth: true
+                    }
                 ]
             ]
         }
     },
-    mounted() {
+    mounted () {
         this.initChart()
-
     },
     methods: {
-        initChart() {
+        initChart () {
             const chartDom = document.getElementById('chart-2')
             const myChart = echarts.init(chartDom)
             myChart.clear()
@@ -140,9 +139,7 @@ export default {
                                 color: 'rgba(255, 255, 255, 0.1)',
                                 type: 'dashed'
                             }
-                        },
-
-
+                        }
 
                     },
                     {
@@ -158,7 +155,7 @@ export default {
                                 color: 'rgba(255, 255, 255, 0.1)',
                                 type: 'dashed'
                             }
-                        },
+                        }
                     }
                 ],
                 series: this.list[this.cateIndex]

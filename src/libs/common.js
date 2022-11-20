@@ -16,16 +16,15 @@ export const randomColor = () => {
 * @param { Number } wait 节流阀
 */
 export const throttle = (func, wait = 200) => {
-    let timeout;
-    return function() {
-        let context = this;
-        let args = arguments;
+    let timeout
+    return function () {
+        const context = this
+        const args = arguments
         if (!timeout) {
             timeout = setTimeout(() => {
-                timeout = null;
+                timeout = null
                 func.apply(context, args)
             }, wait)
         }
-
     }
 }

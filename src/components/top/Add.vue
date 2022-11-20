@@ -85,23 +85,22 @@ export default {
             ]
         }
     },
-    mounted() {
+    mounted () {
         this.initChart()
-
     },
     methods: {
-        initChart() {
+        initChart () {
             const chartDom = document.getElementById('chart-3')
             const myChart = echarts.init(chartDom)
             myChart.clear()
 
-            let option = {
+            const option = {
                 tooltip: {
-                    trigger: 'item',
+                    trigger: 'item'
                 },
                 series: [
                     {
-                        //实线外环
+                        // 实线外环
                         type: 'pie',
                         hoverAnimation: false,
                         radius: ['74%', '74%'],
@@ -111,14 +110,14 @@ export default {
                             color: 'transparent',
                             borderColor: '#2D476C',
                             borderWidth: 1,
-                            borderType: 'solid',
+                            borderType: 'solid'
                         },
                         label: {
-                            show: false,
-                        },
+                            show: false
+                        }
                     },
                     {
-                        //虚线内环
+                        // 虚线内环
                         type: 'pie',
                         hoverAnimation: false,
                         radius: ['52%', '52%'],
@@ -128,11 +127,11 @@ export default {
                             color: 'transparent',
                             borderColor: '#2A4971',
                             borderWidth: 1,
-                            borderType: 'dashed',
+                            borderType: 'dashed'
                         },
                         label: {
-                            show: false,
-                        },
+                            show: false
+                        }
                     },
                     {
                         name: '',
@@ -150,28 +149,27 @@ export default {
                                     align: 'center',
                                     baseline: 'middle',
                                     fontSize: 16,
-                                    fontWeight: '100',
-                                },
-                            },
+                                    fontWeight: '100'
+                                }
+                            }
                         },
                         labelLine: {
                             normal: {
                                 smooth: true,
                                 length: 10,
                                 lineStyle: {
-                                    width: 1.5,
-                                },
-                            },
+                                    width: 1.5
+                                }
+                            }
                         },
                         itemStyle: {
                             borderColor: '#000000',
-                            borderWidth: '4',
+                            borderWidth: '4'
                         },
                         data: this.list
-                    },
-                ],
+                    }
+                ]
             }
-
 
             myChart.setOption(option)
         }
